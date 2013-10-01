@@ -1,9 +1,7 @@
-node-mongodb-directory
+REST interface for Employee Directory Sample App
 ======================
 
-REST interface for Employee Directory Sample App
 
-Built with:
-  http://nodejs.org/
-  http://expressjs.com/
-  http://mongoosejs.com/index.html
+Built using the [Node.js](http://nodejs.org/), [Express.js](http://expressjs.com/) and [Mongoose](http://mongoosejs.com/index.html) frameworks.
+
+Persisted with a MongoDB database
