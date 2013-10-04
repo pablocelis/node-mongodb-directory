@@ -64,7 +64,7 @@ exports.findById = function(req, res) {
 exports.findByName = function(req, res){
 	var name = req.query.name;
 	console.log(name);
-	Directory.find({ firstName: name }, function(err, doc){
+	Directory.find({ firstName: new RegExp(name, 'i') }, function(err, doc){
 		res.json(doc);
 	});
 };
@@ -81,6 +81,11 @@ exports.findByManager = function(req, res) {
 	Directory.find({ managerId: manager}, function(err, doc){
 		res.json(doc);
 	});
+/*
+exports.addEmployee = function(req, res) {
+	console.log(req.body);
 
-
+	Directory.
+};
+*/
 }
