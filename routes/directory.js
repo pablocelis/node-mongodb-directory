@@ -81,11 +81,5 @@ exports.findByManager = function(req, res) {
 	Directory.find({ managerId: manager}, function(err, doc){
 		res.json(doc);
 	});
-/*
-exports.addEmployee = function(req, res) {
-	console.log(req.body);
 
-	Directory.
-};
-*/
 }
