@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Backbone.js and Twitter Bootstrap Sample App</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="header"></div>
+
+<div class="container">
+    <div class="row">
+        <div id="content" class="span12>"></div>
+    </div>
+
+</div>
+
+
+<script type="text/template" id="template-home">
+    <div class="hero-unit" style="height:260px;">
+    <h2>Directory app</h2>
+</script>
+
+<script type="text/template" id="template-header">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+                <a class="brand" href="#">Backbone Directory</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="home-menu active"><a href="#">Home</a></li>
+                        <li class="contact-menu"><a href="#contact">Contact</a></li>
+                    </ul>
+                    <form class="navbar-search pull-right dropdown">
+                        <input id="searchText" type="text" class="search-query dropdown-toggle" placeholder="Search" autocomplete="off">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="template-employeeview">
+    <div class="row">
+        <div id="details" class="span7"></div>
+        <div class="span5">
+            <div id="managerof" class="well">
+                <h3 class="modal-header">Manager of:</h3>
+                <div class="alert alert-info no-manager">
+                  <h4 class="alert-heading">Info</h4>
+                  <%= firstName %> <%= lastName %> is not manager
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="template-employeelistview">
+    <a href='#employees/<%= id %>'>
+        <img width="50" height="50" style="float:left;"/>
+        <p class="list-item"><%= firstName %> <%= lastName %><br /><%= title %></p>
+    </a>
+</script>
+
+<script type="text/template" id="template-employeefullview">
+
+<p><img  width="160" height="160"/></p>
+<h1><%= firstName %> <%= lastName %></h1>
+<h3><%= title %></h3>
+
+<br>
+<div class="row">
+    <div class="span6">
+        <table class="table table-striped">
+            <%
+            if (managerId>0)
+            {
+            %>
+            <tr>
+                <td><h6>Manager:</h6></td>
+                <td><i class="icon-user"></i> <a href='#employees/<%= managerId %>'><%= managerFirstName %> <%= managerLastName %></a></td>
+            </tr>
+            <%
+            }
+            %>
+            <tr>
+                <td><h6>Office Phone:</h6></td>
+                <td><i class="icon-home"></i> <%= officePhone %></td>
+            </tr>
+            <tr>
+                <td><h6>Cell Phone:</h6></td>
+                <td><i class="icon-headphones"></i> <%= cellPhone %></td>
+            </tr>
+            <tr>
+                <td><h6>Email:</h6></td>
+                <td><i class="icon-envelope"></i> <a href="mailto:<%= email %>"><%= email %></a></td>
+            </tr>
+            <tr>
+                <td><h6>Twitter:</h6></td>
+                <td><i class="icon-retweet"></i> <a href=""><%= twitterId %></a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+</script>
+
+<script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+<script src="http://underscorejs.org/underscore.js"></script>
+<script src="http://backbonejs.org/backbone.js"></script>
+
+<script src="models/Employee.js"></script>
+<script src="views/HeaderView.js"></script>
+<script src="views/HomeView.js"></script>
+<script src="views/EmployeeListView.js"></script>
+<script src="views/EmployeeDetailsView.js"></script>
+
+<script src="./main.js"></script>
+
+</body>
+</html>
