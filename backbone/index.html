@@ -24,13 +24,15 @@
     <div class="row">
         <div id="content" class="span12>"></div>
     </div>
-
 </div>
 
 
 <script type="text/template" id="template-home">
+    <header id="header">
+        <h2>Directory app</h2>
+    </header>
     <div class="hero-unit" style="height:260px;">
-    <h2>Directory app</h2>
+
 </script>
 
 <script type="text/template" id="template-header">
@@ -71,52 +73,52 @@
 
 <script type="text/template" id="template-employeelistview">
     <a href='#employees/<%= id %>'>
-        <img width="50" height="50" style="float:left;"/>
+        <img src="pic/blank_user_icon.png" width="50" height="50" style="float:left;"/>
         <p class="list-item"><%= firstName %> <%= lastName %><br /><%= title %></p>
     </a>
 </script>
 
 <script type="text/template" id="template-employeefullview">
 
-<p><img  width="160" height="160"/></p>
-<h1><%= firstName %> <%= lastName %></h1>
-<h3><%= title %></h3>
+    <p><img src="pic/blank_user_icon.png"  width="160" height="160"/></p>
+    <h1><%= firstName %> <%= lastName %></h1>
+    <h3><%= title %></h3>
 
-<br>
-<div class="row">
-    <div class="span6">
-        <table class="table table-striped">
-            <%
-            if (managerId>0)
-            {
-            %>
-            <tr>
-                <td><h6>Manager:</h6></td>
-                <td><i class="icon-user"></i> <a href='#employees/<%= managerId %>'><%= managerFirstName %> <%= managerLastName %></a></td>
-            </tr>
-            <%
-            }
-            %>
-            <tr>
-                <td><h6>Office Phone:</h6></td>
-                <td><i class="icon-home"></i> <%= officePhone %></td>
-            </tr>
-            <tr>
-                <td><h6>Cell Phone:</h6></td>
-                <td><i class="icon-headphones"></i> <%= cellPhone %></td>
-            </tr>
-            <tr>
-                <td><h6>Email:</h6></td>
-                <td><i class="icon-envelope"></i> <a href="mailto:<%= email %>"><%= email %></a></td>
-            </tr>
-            <tr>
-                <td><h6>Twitter:</h6></td>
-                <td><i class="icon-retweet"></i> <a href=""><%= twitterId %></a></td>
-            </tr>
-        </table>
+    <br>
+    <div class="row">
+        <div class="span6">
+            <table class="table table-striped">
+                <%
+                if (managerId>0)
+                {
+                %>
+                <tr>
+                    <td><h6>Manager:</h6></td>
+                    <td><i class="icon-user"></i> <a href='#employees/<%= managerId %>'><%= managerName %></a></td>
+                </tr>
+                <%
+                }
+                %>
+                <tr>
+                    <td><h6>Office Phone:</h6></td>
+                    <td><i class="icon-home"></i> <%= officePhone %></td>
+                </tr>
+                <tr>
+                    <td><h6>Cell Phone:</h6></td>
+                    <td><i class="icon-headphones"></i> <%= cellPhone %></td>
+                </tr>
+                <tr>
+                    <td><h6>Email:</h6></td>
+                    <td><i class="icon-envelope"></i> <a href="mailto:<%= email %>"><%= email %></a></td>
+                </tr>
+                <tr>
+                    <td><h6>Twitter:</h6></td>
+                    <td><i class="icon-retweet"></i> <a href=""><%= twitterId %></a></td>
+                </tr>
+            </table>
 
+        </div>
     </div>
-</div>
 </script>
 
 <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
