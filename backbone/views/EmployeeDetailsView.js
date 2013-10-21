@@ -14,7 +14,7 @@ window.EmployeeView = Backbone.View.extend({
 				}
 			}
 		});
-		$('#managerof', this.el).append(new EmployeeFullView({ model: this.model.managerOf }).render().el);
+		$('#managerof', this.el).append(new EmployeeListView({ model: this.model.managerOf }).render().el);
 		return this;
 	}
 });
